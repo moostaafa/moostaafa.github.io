@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>are you b2ra?</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin-top: 50px;
+      background-color: #ffd1dc;
+    }
+    img {
+      width: 300px;
+      height: auto;
+      margin-top: 20px;
+    }
+    h1 {
+      color: white; 
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 10px;
+      cursor: pointer;
+      background-color: #ff66b2; 
+      border: none;
+      color: white;
+    }
+    button:hover {
+      background-color: #ff4d94; 
+    }
+    #no-btn {
+      background-color: gray;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="main-title">Are you B2ra?</h1>
+
+  <img id="love-img" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtZ2JiZDR0a3lvMWF4OG8yc3p6Ymdvd3g2d245amdveDhyYmx6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif">
+
+  <div>
+    <button id="yes-btn">Yes</button>
+    <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()" style="left: 67.1351px; top: 324.428px;">No</button>
+  </div>
+
+  <script>
+    const yesButton = document.getElementById('yes-btn');
+    const loveImage = document.getElementById('love-img');
+    const mainTitle = document.getElementById('main-title');
+
+    yesButton.addEventListener('click', function() {
+      loveImage.src = 'https://media0.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.gif?cid=6c09b952yipmk0crs51r1ewlbha01ul1abt3xffmpw2z4cm7&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s'; // يمكنك استبدال هذا بعنوان URL للصورة الخاصة بك
+      mainTitle.textContent = 'Yeeeyyy!!';
+    });
+
+    function moveButton() {
+      const noButton = document.getElementById('noButton');
+      const randomX = Math.floor(Math.random() * window.innerWidth);
+      const randomY = Math.floor(Math.random() * window.innerHeight);
+      noButton.style.position = 'absolute';
+      noButton.style.left = randomX + 'px';
+      noButton.style.top = randomY + 'px';
+    }
+  </script>
+
+</body>
+</html>
